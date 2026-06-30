@@ -1,0 +1,88 @@
+base_url = "https://pintomau.dev"
+title = "Mauro Pinto"
+description = "Software and stuff"
+theme = "terminus"
+generate_feeds = true
+feed_filenames = ["rss.xml"]
+build_search_index = true
+compile_sass = true
+
+author = "Mauro Pinto"
+
+taxonomies = [
+    { name = "tags", feed = true },
+]
+
+[markdown]
+render_emoji = true
+external_links_class = "external"
+bottom_footnotes = true
+lazy_async_image = true
+github_alerts = true
+
+[markdown.highlighting]
+style = "inline"
+theme = "monokai"
+
+[link_checker]
+skip_prefixes = [
+    "https://linkedin.com/",
+    "https://www.linkedin.com/",
+]
+
+[extra]
+color_scheme = "oled-abyss"
+color_scheme_switcher = false
+copy_button = true
+stylesheets = ["custom.css"]
+copyright = "© $YEAR $AUTHOR :: Powered by [Zola](https://www.getzola.org) :: Theme by [ebkalderon](https://eyalkalderon.com)"
+favicon = "images/favicon.png"
+feed_icon = true
+layout = "center"
+show_default_author = false
+close_responsive_menu_on_resize = true
+
+main_menu = [
+    { name = "blog", url = "blog", trailing_slash = true },
+    { name = "projects", url = "projects", trailing_slash = true },
+    { name = "archive", url = "archive", trailing_slash = true },
+    { name = "tags", url = "tags", trailing_slash = true },
+]
+
+socials = [
+    { name = "email", url = "mailto:hello@pintomau.dev" },
+    { name = "github", url = "https://github.com/pintomau" },
+    { name = "linkedin", url = "https://linkedin.com/in/mauro-pinto" },
+]
+
+[extra.giscus]
+repo = "pintomau/pintomau.dev"
+repo_id = "R_kgDOTJuO6A"
+category = "General"
+category_id = "DIC_kwDOTJuO6M4DAOXW"
+mapping = "pathname"
+strict = 0
+reactions_enabled = "1"
+emit_metadata = "0"
+input_position = "bottom"
+theme = "dark"
+lang = "en"
+loading = "lazy"
+crossorigin = "anonymous"
+
+[extra.buttondown]
+username = "pintomau"
+
+[extra.content_security_policy]
+enable = true
+allowed_domains = [
+    { directive = "script-src", domains = ["'self'", "giscus.app"] },
+    { directive = "style-src", domains = ["'self'", "'unsafe-inline'", "giscus.app"] },
+    { directive = "frame-src", domains = ["'self'", "giscus.app"] },
+    { directive = "connect-src", domains = ["'self'", "api.github.com"] },
+    { directive = "img-src", domains = ["'self'", "data:"] },
+]
+
+[extra.responsive_images]
+widths = [640, 784, 1280, 1920, 2560]
+fallback_width = 1280

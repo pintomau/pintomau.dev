@@ -1,0 +1,258 @@
+:root {
+  --accent-color-2: #ff7edb
+}
+
+.logo {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+.logo-mascot {
+  display: inline-block;
+  height: 65px;
+  width: 65px;
+  margin: 0 0.4em 0 0.2em;
+  vertical-align: middle;
+  background: #000;
+  border-radius: 50%;
+  object-fit: contain;
+  padding: 5px;
+  box-sizing: border-box;
+}
+
+.logo-text {
+  vertical-align: middle;
+}
+
+.header-logo-container {
+  &::after {
+    background: linear-gradient(to right, var(--accent-color), var(--accent-color-2));
+
+    mask-image: repeating-linear-gradient(
+            to right,
+            black 0,
+            black 2px,
+            transparent 2px,
+            transparent 10px
+    );
+    -webkit-mask-image: repeating-linear-gradient(
+            to right,
+            black 0,
+            black 2px,
+            transparent 2px,
+            transparent 10px
+    );
+  }
+}
+
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1.5rem;
+  margin: 2rem 0;
+}
+
+.project-card {
+  background-color: color-mix(in srgb, var(--text-color) 5%, transparent);
+  border: 1px solid color-mix(in srgb, var(--accent-color) 15%, transparent);
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.project-card-body {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.project-card h2 {
+  margin-top: 0;
+  margin-bottom: 0.75rem;
+  font-size: 1.25rem;
+}
+
+.project-card h2 a {
+  color: var(--text-color);
+  text-decoration: none;
+}
+
+.project-card h2 a:hover {
+  color: var(--accent-color);
+}
+
+.project-card p {
+  color: var(--footnote-color);
+  margin-bottom: 1rem;
+  flex-grow: 1;
+}
+
+.project-tech {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.badge {
+  background-color: var(--accent-color);
+  color: var(--background-color);
+  padding: 0.2rem 0.6rem;
+  font-size: 0.875rem;
+  font-family: "Fira Code", monospace;
+}
+
+.project-links {
+  display: flex;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+}
+
+.btn {
+  padding: 0.4rem 1rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  text-decoration: none;
+  font-family: "Fira Code", monospace;
+  border: 1px solid var(--accent-color);
+  transition: background-color 0.2s, color 0.2s;
+}
+
+.btn-primary {
+  background-color: var(--accent-color);
+  color: var(--background-color);
+}
+
+.btn-primary:hover {
+  background-color: transparent;
+  color: var(--accent-color);
+}
+
+.btn-secondary {
+  background-color: transparent;
+  color: var(--accent-color);
+}
+
+.btn-secondary:hover {
+  background-color: var(--accent-color);
+  color: var(--background-color);
+}
+
+.status {
+  align-self: flex-start;
+  padding: 0.2rem 0.6rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  font-family: "Fira Code", monospace;
+  border: 1px solid var(--accent-color);
+  color: var(--accent-color);
+}
+
+.status-active {
+  background-color: color-mix(in srgb, var(--accent-color) 15%, transparent);
+}
+
+.status-wip {
+  border-color: var(--footnote-color);
+  color: var(--footnote-color);
+}
+
+.status-archived {
+  border-style: dashed;
+}
+
+.newsletter {
+  background-color: color-mix(in srgb, var(--text-color) 5%, transparent);
+  border: 1px solid color-mix(in srgb, var(--accent-color) 15%, transparent);
+  padding: 1.5rem;
+  margin: 2rem 0;
+}
+
+.newsletter h3 {
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+  color: var(--text-color);
+}
+
+.newsletter p {
+  color: var(--footnote-color);
+  margin-bottom: 1rem;
+}
+
+.newsletter-form {
+  display: flex;
+  gap: 0.75rem;
+}
+
+.newsletter-form input[type="email"] {
+  flex: 1;
+  padding: 0.5rem 0.75rem;
+  background-color: var(--background-color);
+  color: var(--text-color);
+  border: 1px solid color-mix(in srgb, var(--accent-color) 25%, transparent);
+  font-family: "Fira Code", monospace;
+  font-size: 0.875rem;
+}
+
+.newsletter-form input[type="email"]:focus {
+  outline: none;
+  border-color: var(--accent-color);
+}
+
+.newsletter-form button {
+  padding: 0.5rem 1rem;
+  background-color: var(--accent-color);
+  color: var(--background-color);
+  border: 1px solid var(--accent-color);
+  font-family: "Fira Code", monospace;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s, color 0.2s;
+}
+
+.newsletter-form button:hover {
+  background-color: transparent;
+  color: var(--accent-color);
+}
+
+.comments {
+  margin-top: 3rem;
+  padding-top: 2rem;
+  border-top: 1px solid color-mix(in srgb, var(--accent-color) 15%, transparent);
+}
+
+.comments h2 {
+  margin-bottom: 1.5rem;
+}
+
+
+main a, .main-menu a {
+  color: transparent;
+  background-image: linear-gradient(90deg, var(--accent-color), var(--accent-color-2));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  width: fit-content;
+  &::after {
+    color: var(--accent-color);
+  }
+}
+
+*:not(.post-title,.header-logo-container)>a {
+  border-bottom: 1px solid var(--accent-color);
+}
+
+@media (max-width: 640px) {
+  .project-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .newsletter-form {
+    flex-direction: column;
+  }
+
+  .newsletter-form button {
+    width: 100%;
+  }
+}

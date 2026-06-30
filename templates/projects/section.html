@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+
+{%- block title -%}
+{{ section.title }} | {{ config.title }}
+{%- endblock -%}
+
+{%- block description -%}
+    {%- if section.description %}
+    <meta name="description" content="{{ section.description | markdown(inline=true) | striptags }}">
+    {%- elif config.description %}
+    <meta name="description" content="{{ config.description }}">
+    {%- endif %}
+{%- endblock -%}
+
+{%- block main -%}
+
+<header class="content">
+    <h1>{{ section.title }}</h1>
+    {%- if section.description %}
+    <p>{{ section.description }}</p>
+    {%- endif %}
+</header>
+
+<div class="project-grid">
+    {%- for page in section.pages %}
+    <article class="project-card">
+        <div class="project-card-body">
+            <h2><a href="{{ page.permalink }}">{{ page.title }}</a></h2>
+            <p>{{ page.description }}</p>
+            {%- if page.extra.tech %}
+            <div class="project-tech">
+                {%- for tech in page.extra.tech %}
+                <span class="badge">{{ tech }}</span>
+                {%- endfor %}
+            </div>
+            {%- endif %}
+            <div class="project-links">
+                {%- if page.extra.repo %}
+                <a href="{{ page.extra.repo }}" class="btn btn-secondary" target="_blank" rel="noopener">Source</a>
+                {%- endif %}
+                {%- if page.extra.live %}
+                <a href="{{ page.extra.live }}" class="btn btn-primary" target="_blank" rel="noopener">Live Demo</a>
+                {%- endif %}
+            </div>
+            {%- if page.extra.status %}
+            <span class="status status-{{ page.extra.status }}">{{ page.extra.status }}</span>
+            {%- endif %}
+        </div>
+    </article>
+    {%- endfor %}
+</div>
+{%- endblock -%}

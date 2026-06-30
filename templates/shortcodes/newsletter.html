@@ -1,0 +1,13 @@
+<div class="newsletter">
+  <h3>Subscribe to the newsletter</h3>
+  <p>Get new posts delivered to your inbox.</p>
+  <form
+    action="https://buttondown.com/api/emails/embed-subscribe/{{ config.extra.buttondown.username }}"
+    method="post"
+    target="popup"
+    class="newsletter-form"
+    onsubmit="window.open('', 'popup', 'width=500,height=600')">
+    <input type="email" name="email" placeholder="your@email.com" required />
+    <button type="submit">Subscribe</button>
+  </form>
+</div>

@@ -1,0 +1,21 @@
+{#- Giscus comments, shown only on blog posts. -#}
+{%- if "blog/_index.md" in page.ancestors and config.extra.giscus.repo_id -%}
+<section class="comments">
+    <h2>Discussion</h2>
+    <script src="https://giscus.app/client.js"
+        data-repo="{{ config.extra.giscus.repo }}"
+        data-repo-id="{{ config.extra.giscus.repo_id }}"
+        data-category="{{ config.extra.giscus.category }}"
+        data-category-id="{{ config.extra.giscus.category_id }}"
+        data-mapping="{{ config.extra.giscus.mapping }}"
+        data-reactions-enabled="{{ config.extra.giscus.reactions_enabled }}"
+        data-emit-metadata="{{ config.extra.giscus.emit_metadata }}"
+        data-input-position="{{ config.extra.giscus.input_position }}"
+        data-theme="{{ config.extra.giscus.theme }}"
+        data-lang="{{ config.extra.giscus.lang }}"
+        data-loading="{{ config.extra.giscus.loading }}"
+        crossorigin="{{ config.extra.giscus.crossorigin }}"
+        async>
+    </script>
+</section>
+{%- endif -%}

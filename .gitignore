@@ -1,0 +1,7 @@
+public/
+processed_images/
+__pycache__/
+*.swp
+*.swo
+*~
+.DS_Store
