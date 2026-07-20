@@ -35,7 +35,7 @@
     <h2>Stay in Touch</h2>
     <p>
         Drop me an <a href="{{ config.extra.socials | filter(attribute='name', value='email') | first | get(key='url') }}">email</a>
-        or find me on <a href="https://github.com/pintomau">GitHub</a> and <a href="https://linkedin.com/in/mauro-pinto">LinkedIn</a>.
+        or find me on <a class="external" href="https://github.com/pintomau">GitHub</a> and <a class="external" href="https://linkedin.com/in/mauro-pinto">LinkedIn</a>.
     </p>
 </section>
 {%- if page.lower or page.higher %}
